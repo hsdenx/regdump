@@ -1,0 +1,195 @@
+AM335X
+{
+	SDRAM_TIMING1	0x4c000018	32
+	{
+		reg_t_rp		25	28	0
+		reg_t_rcd		21	24	0
+		reg_t_wr		17	20	0
+		reg_t_ras		12	16	0
+		reg_t_rxc		6	11	0
+		reg_t_rrd		3	5	0
+		reg_t_wtr		0	2	0
+	}
+	SDRAM_TIMING2	0x4c000020	32
+	{
+		reg_t_xp		28	30	0
+		reg_t_odt		25	27	0
+		reg_t_xsnr		16	24	0
+		reg_t_xsrd		6	15	0
+		reg_t_rtp		3	5	0
+		reg_t_cke		0	2	0
+	}
+	SDRAM_TIMING3	0x4c000028	32
+	{
+		reg_t_pdll_ul		28	31	0
+		reg_zq_zqcs		15	20	0
+		reg_t_rfc		4	12	0
+		reg_t_ras_max		0	3	0
+	}
+	SDRAM_CONFIG	0x4c000008	32
+	{
+		reg_sdram_type		29	31	0
+		reg_ibank_pos		27	28	0
+		reg_ddr_term		24	26	0
+		reg_ddr2_ddqs		23	23	0
+		reg_dyn_odt		21	22	0
+		reg_ddr_disable_dll	20	20	0
+		reg_cwl			16	17	0
+		reg_narrow_mode		14	15	0
+		reg_cl			10	13	0
+		reg_rowsize		7	9	0
+		reg_xibank		4	6	0
+		reg_ebank		3	3	0
+		reg_pagesize		0	2	0
+	}
+	PHY_CONTROL_1	0x4C0000E4	32
+	{
+		reg_phy_enable_dynamic_pwrdn	20	20	0
+		reg_phy_rst_n			15	15	0
+		reg_phy_idle_local_odt		12	13	0
+		reg_phy_wr_local_odt		10	11	0
+		reg_phy_rd_local_odt		8	9	0
+		reg_read_latency		0	4	0
+	}
+	DDR_CMD_IOCTRL	0x44e11404	32
+	{
+		io_config_gp_wd1	21	31	0
+		io_config_gp_wd0	10	20	0
+		io_config_sr_clk	8	9	0
+		io_config_i_clk		5	7	0
+		io_config_sr		3	4	0
+		io_config_i		0	2	0
+		
+	}
+	ZQ_CONFIG	0x4c0000c8	32
+	{
+		reg_zq_cs1en		31	31	0
+		reg_zq_cs0en		30	30	0
+		reg_zq_dualcalen	29	29	0
+		reg_zq_sfexiten		28	28	0
+		reg_zq_zqinit_mult	18	19	0
+		reg_zq_zqcl_mult	16	17	0
+		reg_zq_refinterval	0	15	0
+	}
+	LCD_PID		0x4830e000	32
+	{
+		minor			0	5	0
+		custom			6	7	0
+		major			8	10	0
+		rtl			11	15	0
+		func			16	27	0
+		scheme			30	31	0
+	}
+	LCD_CTRL	0x4830e004	32
+	{
+		modesel			0	0	0
+		auto_uflow_restart	1	1	0
+		clkdiv			8	15	0
+	}
+	LCD_RASTER_CTL	0x4830e028	32
+	{
+		lcden			0	0	0
+		lcdbw			1	1	0
+		lcdtft			7	7	0
+		rdorder			8	8	0
+		nono8b			9	9	0
+		reqdly			12	19	0
+		palmode			20	21	0
+		nibmode			22	22	0
+		tftmap			23	23	0
+		stn565			24	24	0
+		tft24			25	25	0
+		tft24unpacked		26	26	0
+	}
+	LCD_RASTER_TIMING_0	0x4830e02c	32
+	{
+		pplmsb			3	3	0
+		pplsb			4	9	0
+		hsw			10	15	0
+		hfp			16	23	0
+		hbp			24	31	0
+	}
+	LCD_RASTER_TIMING_1	0x4830e030	32
+	{
+		lpp			0	9	0
+		vsw			10	15	0
+		vfp			16	23	0
+		vbp			24	31	0
+	}
+	LCD_RASTER_TIMING_2	0x4830e034	32
+	{
+		hfp_highbits		0	1	0
+		hbp_highbits		4	5	0
+		acb			8	15	0
+		acbi			16	19	0
+		ivs			20	20	0
+		ihs			21	21	0
+		ipc			22	22	0
+		ieo			23	23	0
+		phsvs_rf		24	24	0
+		phsvs_on_off		25	25	0
+		lpp_b10			26	26	0
+		hsw_highbits		27	30	0
+	}
+	CM_WKUP_CLKMODE_DPLL_DISP 0x44e00498	32
+	{
+		DPLL_EN			0	2	0
+		DPLL_RAMP_LEVEL		3	4	0
+		DPLL_RAMP_RATE		5	7	0
+		DPLL_DRIFTGUARD_EN	8	8	0
+		DPLL_RELOCK_RAMP_EN	9	9	0
+		DPLL_LPMODE_EN		10	10	0
+		DPLL_REGMAX4EN		11	11	0
+		DPLL_SCC_EN		12	12	0
+		DPLL_SSC_ACK		13	13	0
+		DPLL_SSC_DOWNSPREAD	14	14	0
+		DPLL_SSC_TYPE		15	15	0
+	}
+	CM_WKUP_CLKSEL_DPLL_DISP 0x44e00454	32
+	{
+		DPLL_DIV		0	6	0
+		DPLL_MULT		8	18	0
+		DPLL_BYP_CLKSEL		23	23	0
+	}
+	CM_WKUP_IDLTESTDPLL_DISP 0x44e00448	32
+	{
+		ST_DPLL_CLK		0	0	0
+		ST_MN_BYPASS		8	8	0
+	}
+	CONF_GMPC_AD0	0x44e10800	32
+	CONF_LCDDATA0	0x44e108a0	32
+	{
+		mode			0	2	0
+		puden			3	3	0
+		putypsel		4	4	0
+		rxactive		5	5	0
+		slewctrl		6	6	0
+	}
+	PWM_IDVER	0x48300000	32
+	{
+		y_minor			0	5	0
+	}
+	PWM_SYSCONFIG	0x48300004	32
+	{
+		softreset		0	0	0
+		freeemu			1	1	0
+		idlemode		2	3	0
+	}
+	PWM_CLKCONFIG	0x48300008	32
+	{
+		eCAPCLK_EN		0	0	0
+		eCAPCLKSTOP_REQ		1	1	0
+		eQEPCLK_EN		4	4	0
+		eQEPCLKSTOP_REQ		5	5	0
+		ePWMCLK_EN		8	8	0
+		ePWMCLKSTOP_REQ		9	9	0
+	}
+	PWM_ECAP_CAP2	0x4830020C	32
+	{
+		cap2			0	31	0
+	}
+	PWM_ECAP_CAP3	0x48300210	32
+	{
+		cap2			0	31	0
+	}
+}

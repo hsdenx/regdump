@@ -1,0 +1,20 @@
+--------------------------------------
+NAND_READ_PARAMETER@f1010418 32 bit val: 3e018f
+TurnOff f
+Acc2First 6
+Acc2Next 1f
+--------------------------------------
+NAND_WRITE_PARAMETER@f101041c 32 bit val: f0f0f
+CEn2WEn f
+WrLow f
+WrHigh f
+--------------------------------------
+NAND_CTRL@f1010470 32 bit val: 187d983
+NFActCEnBoot 1
+NFActCen 1
+NFISD 1
+NFOEnW c
+NFTr 1f
+NFOEnDel 0
+NF_NumAddrPhase 2
+NF_Boot_Type 1

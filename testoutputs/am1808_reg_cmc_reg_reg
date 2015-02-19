@@ -1,0 +1,24 @@
+--------------------------------------
+CE3CFG@68000014 32 bit val: 4222310
+SS 0 : 1=look into manual 0=look also into the manual
+EW 0
+W_SETUP 1
+W_STROBE 2
+W_HOLD 1
+R_SETUP 1
+R_STROBE 6
+R_HOLD 1
+TA 0
+ASIZE 0
+--------------------------------------
+CE2CFG@68000010 32 bit val: 8624311
+SS 0 : 1=look into manual 0=look also into the manual
+EW 0
+W_SETUP 2
+W_STROBE 6
+W_HOLD 1
+R_SETUP 2
+R_STROBE 6
+R_HOLD 1
+TA 0
+ASIZE 1

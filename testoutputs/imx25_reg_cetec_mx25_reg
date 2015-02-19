@@ -1,0 +1,45 @@
+--------------------------------------
+CCM_MPCTL@53f80000 32 bit val: 800bac01
+MFN 1
+MFI b
+LOCK 1
+MFD b
+PD 0
+BRM 1
+--------------------------------------
+ESDCTL0@b8001000 32 bit val: 92210000
+PRCT 0
+BL 0
+FP 0
+PWDT 0
+SREFR 0
+DSIZ 1
+COL 2
+ROW 2
+SP 0
+SMODE 1
+SDE 1
+--------------------------------------
+ESDCFG0@b8001004 32 bit val: 76e83a
+tRC a
+tRCD 3
+tCAS 0
+tRRD 2
+tRAS 6
+tWR 1
+tMRD 2
+tRP 1
+tWTR 1
+tXP 3
+--------------------------------------
+ESDMISC@b8001010 32 bit val: 204
+RST 0
+MDDR_EN 1
+MDDR_DL_RST 0
+MDDR_MDIS 0
+LHD 0
+MA10_SHARE 0
+FRC_MSR 0
+DDR_EN 0
+DDR2_EN 1
+SDRAM_RDY 0

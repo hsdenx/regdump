@@ -1,0 +1,134 @@
+SAM9261
+{
+	SDRAMC_MR	0xffffea00	32
+	{
+		MODE	0	2	0
+	}
+	SDRAMC_TR	0xffffea04	32
+	{
+		COUNT	0	11	0	
+	}
+	SDRAMC_CR	0xffffea08	32
+	{
+		TXSR	28	31	8
+		TRAS	24	27	5
+		TRCD	20	23	2
+		TRP	16	19	3
+		TRC	12	15	7
+		TWR	8	11	2
+		DBW	7	7	1
+		CAS	5	6	0
+		NB	4	4	0
+		NR	2	3	3
+		NC	0	1	0
+	}
+	SDRAMC_LPR	0xffffea10	32
+	{
+		TIMEOUT	12	13	0
+		DS	10	11	0
+		TCSR	8	9	0
+		PASR	4	6	0
+		LPCB	0	1	0
+	}
+	SDRAMC_IER	0xffffea14	32
+	{
+	}
+	SDRAMC_IDR	0xffffea18	32
+	{
+	}
+	SDRAMC_IMR	0xffffea1c	32
+	SDRAMC_ISR	0xffffea20	32
+	{
+		RES	0	0	0
+	}
+	SDRAMC_MDR	0xffffea24	32
+	{
+		MD	0	1	0
+	}
+
+	PMC_SCER	0xfffffc00	32
+	PMC_SCDR	0xfffffc04	32
+	PMC_SCSR	0xfffffc08	32
+	{
+		HCK1	17	17	0
+		HCK0	16	16	0
+		PCK3	11	11	0
+		PCK2	10	10	0
+		PCK1	9	9	0
+		PCK0	8	8	0
+		UDP	7	7	0
+		UHP	6	6	0
+	}
+	PMC_PCER	0xfffffc10	32
+	PMC_PCDR	0xfffffc14	32
+	PMC_PCSR	0xfffffc18	32
+	{
+		PID31	31	31	0
+		PID30	30	30	0
+		PID29	29	29	0
+		PID28	28	28	0
+		PID27	27	27	0
+		PID26	26	26	0
+		PID25	25	25	0
+		PID24	24	24	0
+		PID23	23	23	0
+		PID22	22	22	0
+		PID21	21	21	0
+		PID20	20	20	0
+		PID19	19	19	0
+		PID18	18	18	0
+		PID17	17	17	0
+		PID16	16	16	0
+		PID15	15	15	0
+		PID14	14	14	0
+		PID13	13	13	0
+		PID12	12	12	0
+		PID11	11	11	0
+		PID10	10	10	0
+		PID9	9	9	0
+		PID8	8	8	0
+		PID7	7	7	0
+		PID6	6	6	0
+		PID5	5	5	0
+		PID4	4	4	0
+		PID3	3	3	0
+		PID2	2	2	0
+	}
+	CKGR_MOR	0xfffffc20	32
+	{
+		OSCOUNT		8	15	0
+		OSCBYPASS	1	1	0
+		MOSCEN		0	0	0
+	}
+	CKGR_MCFR	0xfffffc24	32
+	{
+		MAINRDY		16	16	0
+		MAINF		0	15	0
+	}
+	CKGR_PLLAR	0xfffffc28	32
+	{
+		MULA		16	26	0
+		OUTA		14	15	0
+		PLLACOUNT	8	13	0
+		DIVA		0	7	0
+	}
+	CKGR_PLLBR	0xfffffc2c	32
+	{
+		USBDIV		28	29	0
+		MULB		16	26	0
+		OUTB		14	15	0
+		PLLBCOUNT	8	13	0
+		DIVB		0	7	0
+	}
+	PMC_MCKR	0xfffffc30	32
+	{
+		MDIV	8	9	0
+		PRES	2	4	0
+		CSS	0	1	0
+	}
+	PMC_PCKX	0xfffffc40	32
+	{
+		PRES	2	4	0
+		CSS	0	1	0
+	}
+}

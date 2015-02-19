@@ -1,0 +1,124 @@
+regdump is a simple program, which dumps registers bit meanings.
+It growed while porting U-Boot and Linux to a lot of boards,
+and it is not best c code ... maybe it is worth to recode it,
+or better use another language then C ... but the benefit
+from C is, that regdump can be compiled on the target which
+running linux, and regdump can read the register values
+through /dev/mem ... not all embedded targets have for
+example a phyton compiler ... which I nowadys would prefer
+for recoding regdump ...
+
+Regdump needs 2 files:
+
+- registerdescription file:
+
+contains the register descriptions for the cpu/soc
+
+structure:
+
+SOC_Name
+{
+	register_name register_address register_bit_size
+	{
+		BIT_name	BIT_start	BIT_stop	defaultvalue
+	}
+}
+
+comment are marked with a previous '#' and allowed at a start of line, or at
+end of a line.
+
+Example:
+
+AM1808
+{
+	CE3CFG	0x68000014	32
+	CE4CFG	0x68000018	32
+	CE5CFG	0x6800001c	32
+	CE2CFG	0x68000010	32
+	{
+		SS		31	31	0
+		EW		30	30	0
+		W_SETUP		29	26	f
+		W_STROBE	25	20	3f
+		W_HOLD		19	17	7
+		R_SETUP		16	13	f
+		R_STROBE	12	7	3f
+		R_HOLD		6	4	7
+		TA		3	2	3
+		ASIZE		1	0	0
+	}
+}
+
+You can add a description of each register field, for example
+
+		SS		31	31	0 0=this is a comment 1=this another comment
+
+Which gets printed.
+
+- register file:
+
+a simple list of register/value pairs, which get parsed from the program.
+
+structure:
+
+registername value comment
+
+with
+  registername: name of the register defined in the
+                registerdescription file
+
+  value: value of the register
+
+         remark:
+           if the regdump program gets a third commandline parameter
+           the value gets ignored, and instead the regdump program
+           reads the content of the registers address through /dev/mem.
+
+           If this parameter is 8, the program instead prints a list
+           of all registers, with the format regname register_address register_size
+           (This file can used in u-boot to create a register dump with u-boot
+            with the regdump command in u-boot (Todo!). U-Boot should
+           print register_name register_value file, which then can be
+           passed to the regdump program ... So it is possible to
+           compare a U-Boot register setting with a Linux register setting.
+
+If it contains only one column, the registervalue
+gets read through /dev/mem.
+
+Example:
+
+CE3CFG	04222310
+CE2CFG	08624311
+
+
+With the above two example files, a regdump prints:
+
+$ ./regdump am1808.reg cmc_reg.reg
+--------------------------------------
+CE3CFG@68000014 32 bit val: 4222310
+SS 0 : 1=look into manual 0=look also into the manual
+EW 0
+W_SETUP 1
+W_STROBE 2
+W_HOLD 1
+R_SETUP 1
+R_STROBE 6
+R_HOLD 1
+TA 0
+ASIZE 0
+--------------------------------------
+CE2CFG@68000010 32 bit val: 8624311
+SS 0 : 1=look into manual 0=look also into the manual
+EW 0
+W_SETUP 2
+W_STROBE 6
+W_HOLD 1
+R_SETUP 2
+R_STROBE 6
+R_HOLD 1
+TA 0
+ASIZE 1
+
+- in testout directory are examples from some boards
+- regdump has a self test script, called validate_regdump.sh
+  if you change something, please run it!

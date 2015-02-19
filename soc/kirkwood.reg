@@ -1,0 +1,26 @@
+KIRKWOOD
+{
+	NAND_READ_PARAMETER	0xf1010418	32
+	{
+		TurnOff		0	5	0xf
+		Acc2First	6	11	0x1f
+		Acc2Next	17	22	0x1f
+	}
+	NAND_WRITE_PARAMETER	0xf101041c	32
+	{
+		CEn2WEn		0	5	0xf
+		WrLow		8	13	0xf
+		WrHigh		16	21	0xf
+	}
+	NAND_CTRL		0xf1010470	32
+	{
+		NFActCEnBoot	1	1	0
+		NFActCen	7	7	0
+		NFISD		8	8	1
+		NFOEnW		9	13	0xc
+		NFTr		14	18	0x1f
+		NFOEnDel	19	19	0
+		NF_NumAddrPhase	22	23	0x3
+		NF_Boot_Type	24	24	1
+	}
+}

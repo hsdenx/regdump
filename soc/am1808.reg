@@ -1,0 +1,19 @@
+AM1808
+{
+	CE3CFG	0x68000014	32
+	CE4CFG	0x68000018	32
+	CE5CFG	0x6800001c	32
+	CE2CFG	0x68000010	32
+	{
+		SS		31	31	0 1=look into manual 0=look also into the manual
+		EW		30	30	0
+		W_SETUP		26	29	f
+		W_STROBE	20	25	3f
+		W_HOLD		17	19	7
+		R_SETUP		13	16	f
+		R_STROBE	7	12	3f
+		R_HOLD		4	6	7
+		TA		2	3	3
+		ASIZE		0	1	0
+	}
+}

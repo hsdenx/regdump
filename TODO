@@ -1,0 +1,5 @@
+- without boardfile -> read all registers with /dev/mem
+- connect to bdi and read the registers through it ...
+  not trivial
+  maybe use this lib
+  https://github.com/seanmiddleditch/libtelnet

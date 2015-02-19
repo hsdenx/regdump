@@ -1,0 +1,18 @@
+--------------------------------------
+CKGR_PLLAR@fffffc28 32 bit val: 2060bf09
+MULA 60
+OUTA 2
+PLLACOUNT 3f
+DIVA 9
+--------------------------------------
+CKGR_PLLBR@fffffc2c 32 bit val: 10483f0e
+USBDIV 1
+MULB 48
+OUTB 0
+PLLBCOUNT 3f
+DIVB e
+--------------------------------------
+PMC_MCKR@fffffc30 32 bit val: 102
+MDIV 1
+PRES 0
+CSS 2
